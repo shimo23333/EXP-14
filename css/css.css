@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+}
+
+.nav .material-symbols-outlined {
+    font-size: 12pt;
+}
+
+@media(max-width:720px) {
+    .nav .material-symbols-outlined {
+        display: none;
+    }
+}
+
+.phone-nav .material-symbols-outlined {
+    font-size: 18pt;
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: goldenrod;
+}
+
+/*電腦選單*/
+.nav {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media(max-width:720px) {
+    .nav {
+        display: none;
+    }
+
+    /*電腦選單在手機上且active*/
+    .nav.active {
+        display: block;
+        background-color: rgb(35, 35, 35);
+        height: 100%;
+    }
+
+    .nav .active .closure.material-symbols-outlined {
+        display: none;
+    }
+}
+
+/*手機選單*/
+.phone-nav {
+    position: fixed;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgb(35, 35, 35);
+    justify-content: space-between;
+    padding: 15px 25px;
+}
+
+@media(min-width:720px) {
+    .phone-nav {
+        display: none;
+    }
+}
+
+/*電腦第一層*/
+.main-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+@media(max-width:720px) {
+    .main-menu {
+        display: block;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+.main-menu>li {
+    display: inline-block;
+}
+
+/*電腦第一層menu在手機menu時直排*/
+@media(max-width:720px) {
+    .main-menu>li {
+        display: grid;
+        grid-template-rows: auto auto auto auto auto auto;
+    }
+}
+
+/*電腦第一層menu選項*/
+.main-menu>li>a {
+    display: block;
+    padding: 0 20px;
+    line-height: 40px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+/*沒辦法在移入時變色......*/
+
+/*電腦第一層menu選項移入時改變*/
+.main-menu>li>a:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/*電腦第二層*/
+.main-menu>li>.sub-menu {
+    display: none;
+    position: absolute;
+    padding-top: 20px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.main-menu>li>.sub-menu>ul {
+    display: block;
+    /*讓第二層往下排列*/
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+    top: 80px;
+    color: #fff;
+    background-color: rgb(35, 35, 35);
+}
+
+/*電腦第二層menu選項*/
+.main-menu>li>.sub-menu>ul>li>a {
+    display: inline-block;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+/*電腦第二層在手機時先消失*/
+@media(max-width:720px) {
+    .main-menu>li>.sub-menu>ul>li>a {
+        display: none;
+    }
+}
+
+/*電腦第二層menu選項移入時改變底色*/
+.main-menu>li>.sub-menu>ul>li>a:hover {
+    background-color: rgb(42, 42, 42);
+}
+
+
+/*電腦第一層滑入時出現第二層*/
+.main-menu>li:hover .sub-menu {
+    display: block;
+}

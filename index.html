@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+</head>
+<body>
+
+	<nav class="nav" id="nav" onclick="navClick(event)">
+        <div><img class="logo" src="images/logo.png"/></div>
+		<ul class="main-menu">
+			<li>
+                <a href="" class="contains-arrows">關於我們
+                <span class="material-symbols-outlined">expand_more</span></a>
+				<div class="sub-menu">
+                    <ul>
+                        <li><a href="">專業團隊</a></li>
+                        <li><a href="">人才招募</a></li>
+                    </ul>
+                </div>
+			</li>
+			<li><a href="">服務項目</a></li>
+			<li><a href="">品牌行銷講師</a></li>
+			<li>
+				<a href="" class="contains-arrows">成功案例
+                <span class="material-symbols-outlined">expand_more</span></a>
+				<div class="sub-menu">
+                    <ul>
+                        <li><a href="">成功案例總覽</a></li>
+                        <li><a href="">品牌策略</a></li>
+                        <li><a href="">品牌規劃</a></li>
+                        <li><a href="">品牌定位</a></li>
+                        <li><a href="">CIS品牌識別設計</a></li>
+                        <li><a href="">包裝設計</a></li>
+                        <li><a href="">網站設計</a></li>
+                        <li><a href="">品牌行銷</a></li>
+                    </ul>
+                </div>
+			</li>
+            <li>
+				<a href="">品牌觀點
+                <span class="material-symbols-outlined">expand_more</span></a>
+				<div class="sub-menu">
+                    <ul>
+                        <li><a href="">品牌觀點總覽</a></li>
+                        <li><a href="">品牌經營</a></li>
+                        <li><a href="">品牌觀點</a></li>
+                        <li><a href="">設計趨勢</a></li>
+                        <li><a href="">行銷趨勢</a></li>
+                    </ul>
+                </div>空隙
+			</li>
+            <li><a href="">聯絡我們</a></li>
+		</ul>
+	</nav>
+    <!--手機選單-->
+    <div class="phone-nav">
+        <div class="mobile-header">
+            <a href="#"><img class="logo" src="images/logo.png" /></a>
+        </div>
+        <!--切換選單的按鈕-->
+        <div class="toggle" onclick="showMenu()">
+            <span class="open material-symbols-outlined">menu</span>
+            <span class="closure material-symbols-outlined">close</span>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // 切換顯示選單
+        function showMenu() {
+            // 要對按鈕做的事
+            var n = document.getElementById("nav"); // 取得電腦選單nav
+            n.className = "nav active"; // 改變成nav且active的樣式
+        }
+        function hideMenu() {
+            // 要對按鈕做的事
+            var n = document.getElementById("nav"); // 取得電腦選單nav
+            n.className = "nav"; // 改變成nav
+        }
+
+        function navClick(event) {
+            console.log(event.target.id);
+            if (event.target.id == "nav") {
+                hideMenu();
+            }
+        }
+    </script>
+</body>
+</html>
